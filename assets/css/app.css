@@ -1,0 +1,111 @@
+/* ==========================================================================
+   SIAKAD Custom Stylesheet (daisyUI v4 Theme Override + Print Formatting)
+   Palet: Deep Teal (#0f4c5c) Primary, Warm Amber (#d97706) Accent, Warm Slate
+   ========================================================================== */
+
+:root,
+[data-theme="siakad"] {
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color-scheme: light;
+}
+
+html, body {
+    font-family: var(--font-sans);
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: #1e293b;
+    background-color: #f8fafc;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Tabel rapi dengan header tetap terbaca */
+.table th {
+    text-transform: none;
+    letter-spacing: 0.01em;
+    font-size: 0.8rem;
+}
+
+.table td {
+    font-size: 0.875rem;
+}
+
+/* Fokus aksesibilitas keyboard */
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid #0f766e;
+    outline-offset: 1px;
+}
+
+/* Elemen khusus cetak disembunyikan di layar normal */
+.print-only {
+    display: none;
+}
+
+/* ==========================================================================
+   Aturan Cetak (@media print) — KHS & Transkrip Rapi Satu Halaman A4
+   ========================================================================== */
+@media print {
+    @page {
+        size: A4 portrait;
+        margin: 12mm 14mm;
+    }
+
+    html, body {
+        background: #ffffff !important;
+        color: #000000 !important;
+        font-size: 11pt !important;
+        line-height: 1.35 !important;
+    }
+
+    .no-print,
+    header.app-navbar,
+    aside.app-sidebar,
+    #sidebar-backdrop,
+    #toast-container,
+    #modal-confirm-delete {
+        display: none !important;
+    }
+
+    .print-only {
+        display: block !important;
+    }
+
+    main.app-main {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .print-container {
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    table.print-table {
+        width: 100% !important;
+        border-collapse: collapse !important;
+        margin-top: 8pt !important;
+    }
+
+    table.print-table th,
+    table.print-table td {
+        border: 1px solid #334155 !important;
+        padding: 5pt 7pt !important;
+        font-size: 9.5pt !important;
+        color: #000000 !important;
+        background: transparent !important;
+    }
+
+    table.print-table thead th {
+        background-color: #f1f5f9 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        font-weight: 700 !important;
+    }
+}

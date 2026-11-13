@@ -1,0 +1,20 @@
+# Ignore seluruh file Markdown lokal (prompt, catatan belajar, dokumen internal)
+*.md
+docs/
+doc-final/
+
+# Kecualikan README.md utama di root repositori
+!/README.md
+
+# Ignore file sementara Microsoft Office (PowerPoint/Word lock files)
+~$*
+*.tmp
+
+# Ignore file sistem operasi & editor
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+*.log
+.env
